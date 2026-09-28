@@ -1,0 +1,19 @@
+cd tri3x-repository
+
+# Cek file yang aman (sudah bersih WA & BCA)
+git status
+# Hanya add file public yang sudah bersih:
+git add index.html map/index.html tukang/index.html angkut/index.html daftar/index.html admin/index.html install/index.html manifest.json sw.js netlify.toml _redirects _headers vercel.json assets/img/logo-tri3x-asli.jpeg .gitignore
+
+# JANGAN add file ini (masih ada WA/BCA private):
+# - PLAYSTORE_DESCRIPTION_WA_BENAR.txt (ada WA & BCA)
+# - BROSUR_WA_BENAR_089507300263.txt (ada WA)
+# - DESKRIPSI_APK_TRI3X_WA_BENAR*.md (ada BCA)
+# - README.md, GITHUB_ISSUES.md, dll yang masih ada BCA
+
+# Commit AMAN tanpa bocor WA/BCA di history:
+git commit -m "privacy: hapus data pribadi dari apk public - sanitasi wa, alamat, dan info sensitif - escrow aman - komisi via env private - apk siap digunakan"
+
+git push origin main
+
+# Setelah push, di Netlify Dashboard set env var BCA_ESCROW_PRIVATE=7010640835 (rahasia)
