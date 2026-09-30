@@ -1,0 +1,64 @@
+[build]
+  publish = "."
+  command = "echo 'TRI3X.ID V7.2 Privacy Safe - No build needed - Static HTML - No WA/Address/BCA in public'"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/map"
+  to = "/map/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/tukang"
+  to = "/tukang/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/angkut"
+  to = "/angkut/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/daftar"
+  to = "/daftar/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/install"
+  to = "/install/index.html"
+  status = 200
+
+[[headers]]
+  for = "/.well-known/assetlinks.json"
+  [headers.values]
+    Content-Type = "application/json"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+    Content-Type = "application/javascript"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(self), camera=(self)"
+
+[functions]
+  directory = "netlify/functions"
